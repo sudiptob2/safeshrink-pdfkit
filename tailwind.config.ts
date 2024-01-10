@@ -17,7 +17,9 @@ export default {
 		forms,
 		typography,
 		skeleton({
-			themes: {}
+			themes: {
+				preset: [{ name: 'wintry', enhancements: true }]
+			}
 		})
 	]
 } satisfies Config;
