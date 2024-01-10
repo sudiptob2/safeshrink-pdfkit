@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '@fortawesome/fontawesome-free/css/all.min.css';
 	import { AppBar, AppShell } from '@skeletonlabs/skeleton';
 	import '../app.postcss';
 	// Highlight JS
