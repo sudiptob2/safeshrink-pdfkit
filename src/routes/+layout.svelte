@@ -15,8 +15,8 @@
 <AppShell>
 	<svelte:fragment slot="header">
 		<!-- App Bar -->
-		<AppBar>
-			<svelte:fragment slot="lead">
+		<AppBar gridColumns="grid-cols-6">
+			<svelte:fragment slot="trail">
 				<strong class="text-xl uppercase">Safe<span class="text-sm">Shrink</span></strong>
 			</svelte:fragment>
 		</AppBar>
