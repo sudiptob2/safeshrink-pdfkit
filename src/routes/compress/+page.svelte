@@ -2,6 +2,7 @@
 	import CompressionTypes from './CompressionTypes.svelte';
 	import FileUploader from './FileUploader.svelte';
 	import PageIntro from './PageIntro.svelte';
+	import ResultTable from './ResultTable.svelte';
 </script>
 
 <div class="flex-1 mx-w-4xl mx-auto p-10">
@@ -10,6 +11,7 @@
 			<PageIntro />
 			<CompressionTypes />
 			<FileUploader />
+			<ResultTable />
 		</div>
 	</div>
 </div>
