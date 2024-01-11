@@ -17,11 +17,13 @@
 	};
 
 	$: {
-		sourceData = $compressionResultTableData.map((row) => ({
-			...row,
-			status: `<span class="chip variant-filled bg-green-700 text-xs font-bold py-1 px-2 text-center rounded-2xl">${row.status}</span>`,
-			download: `<button type="button" class="chip variant-filled text-xs uppercase">download</button>`
-		}));
+		sourceData = $compressionResultTableData
+			.map((row) => ({
+				...row,
+				status: `<span class="chip variant-filled bg-green-700 text-xs font-bold py-1 px-2 text-center rounded-2xl">${row.status}</span>`,
+				download: `<button type="button" class="chip variant-filled text-xs uppercase">download</button>`
+			}))
+			.reverse();
 		tableSource = setTableSource();
 	}
 </script>
