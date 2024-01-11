@@ -20,16 +20,12 @@
 	}
 </script>
 
-<div class="">
-	<div class="">
-		<FileDropzone class="w-full" name="files" bind:files multiple>
-			<svelte:fragment slot="lead"
-				><i class="text-surface-700 fa-solid fa-file-arrow-up text-4xl" /></svelte:fragment
-			>
-			<svelte:fragment slot="message">
-				<strong>Upload a file </strong>or drag and drop</svelte:fragment
-			>
-			<svelte:fragment slot="meta">Only <string>PDF</string> files are allowed</svelte:fragment>
-		</FileDropzone>
-	</div>
-</div>
+<FileDropzone class="w-full" name="files" bind:files multiple>
+	<svelte:fragment slot="lead">
+		<i class="text-surface-700 fa-solid fa-file-arrow-up text-4xl" />
+	</svelte:fragment>
+	<svelte:fragment slot="message">
+		<strong>Upload a file </strong>or drag and drop
+	</svelte:fragment>
+	<svelte:fragment slot="meta">Only <em>PDF</em> files are allowed</svelte:fragment>
+</FileDropzone>
