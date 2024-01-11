@@ -1,9 +1,22 @@
 <script lang="ts">
 	import { FileDropzone } from '@skeletonlabs/skeleton';
+	import { compressionResultTableData } from '../../stores/compressionStore';
 
 	let files: FileList;
 	$: if (files) {
-		console.log(files);
+		compressionResultTableData.update((data) => {
+			const newData = [...data];
+			for (let i = 0; i < files.length; i++) {
+				newData.push({
+					position: data.length + i + 1,
+					name: files[i].name,
+					before: `${Math.round(files[i].size / 1000)} KB`,
+					status: 'saved 35%',
+					after: `${Math.round(files[i].size / 1000)} KB`
+				});
+			}
+			return newData;
+		});
 	}
 </script>
 
@@ -19,14 +32,4 @@
 			<svelte:fragment slot="meta">Only <string>PDF</string> files are allowed</svelte:fragment>
 		</FileDropzone>
 	</div>
-	{#if files}
-		<div class="mt-4">
-			<h2 class="text-lg">Selected files:</h2>
-			<ul>
-				{#each Array.from(files) as file (file.name)}
-					<li>{file.name}</li>
-				{/each}
-			</ul>
-		</div>
-	{/if}
 </div>
