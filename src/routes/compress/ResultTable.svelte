@@ -8,6 +8,10 @@
 	let sourceData: CompressionResult[] = [];
 	let tableSource: TableSource;
 
+	const handleDownload = (row: any) => {
+		console.log(row);
+	};
+
 	const setTableSource = (): TableSource => {
 		return {
 			head: ['Name', 'Before', 'Status', 'After', 'Download'],
@@ -30,6 +34,11 @@
 
 {#if sourceData.length > 0}
 	<div class="overflow-auto max-h-[400px]">
-		<Table regionBody="table-fixed " source={tableSource} />
+		<Table
+			interactive={true}
+			on:selected={handleDownload}
+			regionBody="table-fixed "
+			source={tableSource}
+		/>
 	</div>
 {/if}
